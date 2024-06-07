@@ -4,9 +4,6 @@ import resLists from "../utils/mockData";
 
 const Body = () => {
 
-  // Normal JS Variable
-  let listOfRestaurants = resLists
-
   // State Variable - Super powerful variable
   const [listOfRestaurant, setListOfRestaurant] = useState(resLists);
 
