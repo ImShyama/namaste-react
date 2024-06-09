@@ -30,19 +30,19 @@ Episode-02
 # Food Ordering App
 
 - Header
-- - Logo
-- - Nav Items
+  - Logo
+  - Nav Items
 - Body
-- - Search
-- - RestaurantContainer
--      -RestaurantCard
--          -image
--          -Name of Res, star rating, cuisine, delery time
+  - Search
+  - RestaurantContainer
+      -RestaurantCard
+         -image
+         -Name of Res, star rating, cuisine, delery time
 - Footer
-- - Copyright
-- - Links
-- - Address
-- - Contact
+  - Copyright
+  - Links
+  - Address
+  - Contact
 
 # Use of key in looping
 
@@ -66,4 +66,22 @@ import {const_name} from 'path';
  - useState() - Superpowerful State variable in react
     - A hook is just a normal javascript function given by React, pre-build, which comes with some super power, is like uility function given by react
  
- - useEffect()
+ - useEffect() - 
+
+
+# JSON Viewer
+  - It is a Chrome extension for printing the most beautiful and customizable JSON/JSONP highlighter that your eyes have ever seen
+
+
+# Allow CORS
+  - It is a Chrome extension for handle CORS error
+  - Allow CORS: Access-Control-Allow-Origin lets you easily perform cross-domain Ajax requests in web applications.
+  - This is usefull for development purpose while we are in localhost
+
+# CORSPROXY.IO
+ - A fast & simple way to fix CORS Errors
+ - USES - https://corsproxy.io/?OUR_API_LINK
+
+# Shimmer UI
+  - A better way to show loading states
+  
