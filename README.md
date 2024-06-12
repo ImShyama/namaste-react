@@ -65,8 +65,27 @@ import {const_name} from 'path';
  (Normal JS utility function)
  - useState() - Superpowerful State variable in react
     - A hook is just a normal javascript function given by React, pre-build, which comes with some super power, is like uility function given by react
+
+    - Always create a useState variable inside a function component and never create useState outside of function component
+
+    - Try to call useState on top, because javasvript is single thraded language, its execuate line by line, its always maintain the consistancy
+
+    - Never create a useState inside a if-else, this is perfectly valid code but it will create in-consistant in program
+
+    - Never create inside for loop
  
  - useEffect() - 
+    - if no dependency array => useEffect is called on every rander Ex- useEffect(()=>{
+      console.log("useEffect rander")
+    });
+
+    - if dependency array is empty = [] => useEffect is called on initial render Ex- useEffect(()=>{
+      console.log("useEffect Called")
+    },[]);
+
+    - if dependency array has element = [login] => useEffect is called on login updated Ex- useEffect(()=>{
+      console.log("useEffect Called")
+    },[login]);
 
 
 # JSON Viewer
