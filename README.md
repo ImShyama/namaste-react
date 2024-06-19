@@ -103,4 +103,12 @@ import {const_name} from 'path';
 
 # Shimmer UI
   - A better way to show loading states
+
+# React Router Dom
+
+# useRouteError
   
+
+# 2 types Routing in web apps
+  - Client Side Routing
+  - Server Side Routing
