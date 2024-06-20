@@ -9,9 +9,9 @@ const Error = () => {
         <h1>Oops!</h1>
         <h2>Somethings went wrong!!</h2>
         <h3>
-          {err.status}: {err.statusText}
+          {err?.status}: {err?.statusText}
         </h3>
-        <p>{err.error.message}</p>
+        <p>{err.error?.message}</p>
       </div>
     </div>
   );
