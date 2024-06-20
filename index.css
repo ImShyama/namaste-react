@@ -154,6 +154,6 @@ body {
   height: 95vh;
 }
 
-li > Link {
+.link_style {
   text-decoration: none;
 }
