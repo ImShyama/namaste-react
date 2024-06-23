@@ -1,15 +1,26 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const User = ({name}) => {
-    const [count, setCount] = useState(0);
-    const [count2, setCount2] = useState(2);
+const User = () => {
+    const [userInfo, setUserInfo] = useState({name:"Dummy Name", location:"Someware else"});
+
+    useEffect(()=>{
+        getUserInfo()
+    },[])
+
+    const getUserInfo = async() =>{
+        const response = await fetch(`https://api.github.com/users/Imshyama`)
+        const json = await response.json();
+        setUserInfo(json)
+    }
+
+    const{name,location,avatar_url} = userInfo;
+
     return (
         <div className="user-card">
-            <h2>{name}</h2>
-            <h3>Location: Nepal</h3>
-            <h4>Contact: p.shyama96</h4>
-            <p>count - {count}</p>
-            <p>count2 - {count2}</p>
+            <img src={avatar_url} />
+            <h2>Name: {name}</h2>
+            <h3>Location: {location}</h3>
+            <h4>Contact: p.shyama96111</h4>
         </div>
     )
 }

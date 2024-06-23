@@ -118,3 +118,22 @@ import {const_name} from 'path';
 # 2 types Routing in web apps
   - Client Side Routing
   - Server Side Routing
+
+
+# React Life Cycle Works
+
+  - Parent Construter
+  - Parent Render
+
+    - First Child Construter
+    - First Child Render
+
+    - Second Child Construter
+    - Second Child Render
+
+    - <DOM UPDATED - IN SINGLE BATCH>
+
+    - First Child component did mount
+    - Second Child component did mount
+
+  - Parent Component did mount
