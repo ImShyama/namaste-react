@@ -87,6 +87,8 @@ import {const_name} from 'path';
       console.log("useEffect Called")
     },[login]);
 
+  - custome hooks
+
 
 
 
@@ -137,3 +139,21 @@ import {const_name} from 'path';
     - Second Child component did mount
 
   - Parent Component did mount
+
+
+# Custome Hooks
+
+
+# Lazy Loading
+
+  - bundling
+  - Chunking
+  - Code Splitting
+  - Dynamic bundling
+  - lazy loading
+  - on demand loading
+  - Dynamic import
+
+  - Ex: import React, { lazy, Suspense } from "react";
+  - const Grocery = lazy( () => import("./components/Grocery"))
+  - element: <Suspense fallback={<h1>Loading grocery ...</h1>}> <Grocery /> </Suspense>

@@ -3,35 +3,19 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 // import resLists from "../utils/mockData";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import useRestaurant from "../utils/useRestaurant";
 
 const Body = () => {
   // State Variable - Super powerful variable
-  const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [FilterList, setFilterList] = useState([]);
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const listOfRestaurant = useRestaurant();
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.5940947&lng=85.1375645&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+  const onlineStatus = useOnlineStatus();
 
-    const json = await data.json();
-    console.log("json",json);
-    // Optional Chaning
-    setListOfRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilterList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
-
-  console.log("search");
-  console.log("listOfRestaurant",listOfRestaurant);
+  if(onlineStatus === false) return <h1>Looks like you're offline! Please check your online status</h1>
 
   return listOfRestaurant?.length === 0 ? (
     <Shimmer />
@@ -75,7 +59,7 @@ const Body = () => {
         }}>reset</button>
       </div>
       <div className="res-container">
-        {FilterList.map((restaurant) => (
+        {listOfRestaurant.map((restaurant) => (
           <Link to={"/restaurants/"+ restaurant.info.id} className="link_style" key={restaurant.info.id}><RestaurantCard  resData={restaurant} /></Link>
         ))}
       </div>
