@@ -157,3 +157,18 @@ import {const_name} from 'path';
   - Ex: import React, { lazy, Suspense } from "react";
   - const Grocery = lazy( () => import("./components/Grocery"))
   - element: <Suspense fallback={<h1>Loading grocery ...</h1>}> <Grocery /> </Suspense>
+
+
+# Styling ways
+
+  - css
+  - sass
+  - scss
+  - styled component
+  - MUI
+  - chakra ui
+  - antdesign
+  - Tailwind CSS
+
+
+# Tailwind CSS
