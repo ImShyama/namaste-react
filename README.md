@@ -172,3 +172,9 @@ import {const_name} from 'path';
 
 
 # Tailwind CSS
+
+
+# Higher Order Component
+
+  - It is a function thats takes a component and return a component
+  - Its takes a component and its inhance the component and return it back a component, as inhanser

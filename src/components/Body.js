@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromoted} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 // import resLists from "../utils/mockData";
@@ -14,6 +14,8 @@ const Body = () => {
   const listOfRestaurant = useRestaurant();
 
   const onlineStatus = useOnlineStatus();
+
+  const RestaurantCardPromoted = withPromoted(RestaurantCard);
 
   if (onlineStatus === false)
     return <h1>Looks like you're offline! Please check your online status</h1>;
@@ -77,7 +79,8 @@ const Body = () => {
             className="link_style"
             key={restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.veg ? <RestaurantCardPromoted resData={restaurant}/> :  <RestaurantCard resData={restaurant} />}
+            
           </Link>
         ))}
       </div>
