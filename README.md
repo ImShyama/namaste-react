@@ -178,3 +178,10 @@ import {const_name} from 'path';
 
   - It is a function thats takes a component and return a component
   - Its takes a component and its inhance the component and return it back a component, as inhanser
+
+
+# React Developer Tools crome extention for debugging react
+
+# Lifting State up
+
+  - React doc - https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example

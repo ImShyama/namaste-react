@@ -7,7 +7,7 @@ import Error  from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Contact from "./components/Contact";
-// import Grocery from "./components/Grocery";
+import Test from "./components/Test";
 
 
 // bundling
@@ -49,6 +49,10 @@ const appRouter = createBrowserRouter([
             {
                 path: '/restaurants/:resId',
                 element: <RestaurantMenu />
+            },
+            {
+                path: '/test',
+                element: <Test />
             },
             {
                 path: '/grocery',
