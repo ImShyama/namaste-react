@@ -185,3 +185,27 @@ import {const_name} from 'path';
 # Lifting State up
 
   - React doc - https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example
+
+
+# Props driling
+
+  - It is okay for one to two driling but if there is 5-10 child of driling, it is not recomanded
+  - This problem resolved from context 
+
+
+# Context
+
+
+
+...
+# Redux Toolkit
+- Redux Toolkit is a set of tools for working with Redux, a state management library for React
+
+- Redux Toolkit provides a set of utilities to simplify the process of setting up and using Redux in your
+
+  - Install @reduxjs/toolkit and react-redux 
+  - Build our store
+  - Connect our store to our app
+  - Slice (cartSlice)
+  - dispatch(action)
+  - Selector

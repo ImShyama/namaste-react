@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import RestaurantCard, {withPromoted} from "./RestaurantCard";
+import { useEffect, useState, useContext } from "react";
+import RestaurantCard, { withPromoted } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 // import resLists from "../utils/mockData";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurant from "../utils/useRestaurant";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // State Variable - Super powerful variable
@@ -17,6 +18,8 @@ const Body = () => {
 
   const RestaurantCardPromoted = withPromoted(RestaurantCard);
 
+  const { loggedInUser, setUserName } = useContext(UserContext);
+
   if (onlineStatus === false)
     return <h1>Looks like you're offline! Please check your online status</h1>;
 
@@ -28,7 +31,7 @@ const Body = () => {
         <div className="search m-4 p-4 ">
           <input
             type="text"
-            className="border border-solid border-black mx-2 py-1 px-2 "
+            className="border border-solid border-black m-2 py-1 px-2 "
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
@@ -71,6 +74,15 @@ const Body = () => {
             Reset
           </button>
         </div>
+        <div className="m-4 p-4">
+          <label>User Name: </label>
+          <input
+            type="text"
+            className="border border-solid border-black m-2 py-1 px-2 rounded-md"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap justify-center">
         {listOfRestaurant.map((restaurant) => (
@@ -79,8 +91,11 @@ const Body = () => {
             className="link_style"
             key={restaurant.info.id}
           >
-            {restaurant.info.veg ? <RestaurantCardPromoted resData={restaurant}/> :  <RestaurantCard resData={restaurant} />}
-            
+            {restaurant.info.veg ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

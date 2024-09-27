@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+
 
 const User = () => {
     const [userInfo, setUserInfo] = useState({name:"Dummy Name", location:"Someware else"});
